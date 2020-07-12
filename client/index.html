@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+        
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+
+    <title>Chat App</title>
+</head>
+
+<body>
+    <h1 class="h3 mb-3 font-weight-normal">Chat with me</h1>
+    <div class="container mt-5">
+        <div id="chat-window">
+            <h2>
+                Messages
+            </h2>
+            <div id="output"></div>
+            <div id="typing"></div>
+        </div>
+        <form class="form-signin">
+            <input type="text" id="handle" class="form-control" placeholder="Name " required autofocus />
+            <input id="message" class="form-control" placeholder="Enter Message " required />
+
+            <button id="button" class="btn btn-lg btn-primary btn-block">Send</button>
+            <p class="mt-5 mb-3 text-muted">&copy; 2017-2020</p>
+        </form>
+        <hr />
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-md-6 col-lg-6">
+                    Remote
+                    <video autoplay="autoplay" id="rVideo" />
+                </div>
+                <div class="ol-sm-6 col-md-6 col-lg-6">
+                    Local
+                    <video autoplay="autoplay" id="lVideo" muted="muted" />
+                </div>
+            </div>
+            <input id="connId" class="form-control" placeholder="Enter Connection id " required />
+            <button id="conn_brn" class="btn btn-lg btn-success btn-block">Connect</button>
+            <button id="call_btn" class="btn btn-lg btn-danger btn-block">Call</button>
+        </div>
+    </div>
+    <script src="/socket.io/socket.io.js "></script>
+    <script src="./index.js"></script>
+</body>
+
+</html>
